@@ -102,7 +102,7 @@ int main(int argc, char* argv[]){
                 probofnega *= double((trainnegative[tempstr[j]]+smoothing)/(trainpositive[tempstr[j]]+trainnegative[tempstr[j]]+smoothing)
                               *(trainpositive[tempstr[j]]+trainnegative[tempstr[j]]+smoothing)/traintotal/(negacommon/totalcommon))
             }
-            cout<<probofposi>probofnega
+            cout<<probofposi>probofnega;
             if(probofposi>probofnega){
                 testresult.push_back(1);
             }
