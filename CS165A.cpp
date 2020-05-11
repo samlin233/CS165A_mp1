@@ -98,9 +98,9 @@ int main(int argc, char* argv[]){
             double probofnega =0;
             for(int j=0;j<tempstr.size();j++){
                 probofposi *= double((trainpositive[tempstr[j]]+smoothing)/(trainpositive[tempstr[j]]+trainnegative[tempstr[j]]+smoothing)
-                              *(trainpositive[tempstr[j]]+trainnegative[tempstr[j]]+smoothing)/traintotal/(posicommon/totalcommon))
+                              *(trainpositive[tempstr[j]]+trainnegative[tempstr[j]]+smoothing)/traintotal/(posicommon/totalcommon));
                 probofnega *= double((trainnegative[tempstr[j]]+smoothing)/(trainpositive[tempstr[j]]+trainnegative[tempstr[j]]+smoothing)
-                              *(trainpositive[tempstr[j]]+trainnegative[tempstr[j]]+smoothing)/traintotal/(negacommon/totalcommon))
+                              *(trainpositive[tempstr[j]]+trainnegative[tempstr[j]]+smoothing)/traintotal/(negacommon/totalcommon));
             }
 
             if(probofposi>probofnega){
