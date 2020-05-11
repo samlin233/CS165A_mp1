@@ -13,8 +13,8 @@ int posicommon =0;
 int negacommon =0;
 int traintotal=0;
 int testtotal =0;
-int trainpositive =0;
-int trainnegative =0;
+int numtrainpositive =0;
+int numtrainnegative =0;
 double trainnegarate =0;
 double trainposirate =0;
 int testcorrect =0;
@@ -58,7 +58,7 @@ int main(int argc, char* argv[]){
                         trainpositive.insert({temp,1})
                     }
                     traintotal += 1;
-                    trainpositive += 1;
+                    numtrainpositive += 1;
                 }
                 if(line.at(i)==" "&&posi==0){
                     if(trainnegative.find(temp) != trainnegative.end()){
@@ -68,14 +68,14 @@ int main(int argc, char* argv[]){
                         trainnegative.insert({temp,1})
                     }
                     traintotal += 1;
-                    trainnegative += 1;
+                    numtrainnegative += 1;
                 }
             }
         }
     }
-
-    trainposirate = trainpositive/traintotal;
-    trainnegarate = trainnegative/traintotal;
+    //不确定使用这个还是下方的(negacommon/totalcommon)
+    trainposirate = numtrainpositive/traintotal;
+    trainnegarate = numtrainnegative/traintotal;
     ifstream testfile;
     testfile.open(argv[2]);
     if(testfile.is_open()){
