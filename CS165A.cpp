@@ -36,7 +36,7 @@ int main(int argc, char* argv[]){
             bool posi = 0;
 
             totalcommon ++;
-            if(line.at(line.length()-1)=="1"){
+            if(line.at(line.length()-1)=='1'){
                 posi = 1;
                 posicommon ++;
             }
@@ -50,22 +50,22 @@ int main(int argc, char* argv[]){
                 end = i;
                 string temp = line.substr(begin,end-begin);
                 begin = i+1;
-                if(line.at(i)==" "&&posi==1){
+                if(line.at(i)==' '&&posi==1){
                     if(trainpositive.find(temp) != trainpositive.end()){
                         trainpositive[temp] ++;
                     }
                     else{
-                        trainpositive.insert({temp,1})
+                        trainpositive.insert({temp,1});
                     }
                     traintotal += 1;
                     numtrainpositive += 1;
                 }
-                if(line.at(i)==" "&&posi==0){
+                if(line.at(i)==' '&&posi==0){
                     if(trainnegative.find(temp) != trainnegative.end()){
                         trainnegative[temp] ++;
                     }
                     else{
-                        trainnegative.insert({temp,1})
+                        trainnegative.insert({temp,1});
                     }
                     traintotal += 1;
                     numtrainnegative += 1;
@@ -88,7 +88,7 @@ int main(int argc, char* argv[]){
             vector<string> tempstr;
             
             for(int i=0;i<line.length()-2;i++){
-                if(line.at(i) == " "){
+                if(line.at(i) == ' '){
                     end = i;
                     tempstr.push_back(line.substr(begin,end-begin));
                     begin = i+1;
